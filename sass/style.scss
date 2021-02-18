@@ -1,14 +1,35 @@
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+}
 
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("Roboto/Roboto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Shrikhand-Regular";
+    src: url("Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
 
 
 $margin-left: 40px;
 $font-size: 25px;
+$roboto-bold: "Roboto-Bold";
+$roboto-regular: "Roboto-Regular";
 
 
 body {
     margin: 0;
     padding: 0;
     max-width: 1800px;
+    font-family: $roboto-regular;
 }
 
 /* HEADER */
@@ -41,6 +62,7 @@ body {
     h3 {
         text-align: center;
         font-size: $font-size;
+        font-family: $roboto-bold;
     }
 
     p{
@@ -90,4 +112,5 @@ body {
 .restaurants {
     margin-left: $margin-left;
 }
+
 
