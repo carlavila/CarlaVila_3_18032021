@@ -1,0 +1,366 @@
+
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("Roboto/Roboto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Shrikhand-Regular";
+    src: url("Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+
+$primary: black;
+$primary-white: white;
+$margin-left: 40px;
+$font-size: 27px;
+$font-size-body: 18px;
+$roboto-bold: "Roboto-Bold";
+$roboto-regular: "Roboto-Regular";
+$roboto-thin: "Roboto-Thin";
+$shrikhand-regular: "Shrikhand-Regular";
+$padding-left: 15px;
+$padding-bottom: 25px;
+$padding-top : 25px;
+$padding-right: 110px;
+$padding-icones: 10px;
+$border : 0.5px solid rgb(245, 245, 245);
+$border-radius: 20px;
+$background-color: rgb(245, 245, 245);
+
+
+body {
+    max-width: 1600px;
+    display: block;
+    margin: auto;
+    font-family: $roboto-regular;
+}
+
+
+                                /* PAGE D'ACCUEIL */
+
+
+/* HEADER */
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 170px;
+    height: 30px;
+}
+
+/* DIV 1 */
+
+.location {
+    border-top: 0.5px solid rgb(201, 201, 201);
+    box-shadow: inset 5px 12px 7px -10px  rgb(211, 210, 210);
+    border-bottom: 0.5px solid rgb(231, 231, 231);
+    background-color: rgb(231, 231, 231);
+
+    .p1 {
+        text-align: center;
+        font-size: $font-size-body;
+
+        .fa-map-marker-alt {
+            color: $primary;
+            padding-right: 15px;
+        }
+    }
+}
+
+/* DIV 2 */
+
+.exploration {
+    border-top: 0.5px solid  rgb(245, 245, 245);
+    border-bottom: 0.5px solid rgb(245, 245, 245);
+    background-color: $background-color;
+    padding-bottom: 60px;
+
+    h3 {
+        text-align: center;
+        font-size: $font-size;
+        font-family: $roboto-bold;
+    }
+
+    p{
+        text-align: center;
+        font-family: $roboto-thin;
+        font-size: 22px;
+        padding-bottom: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        border: 2px solid #b9b9b9;
+        border-radius: 2rem;
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));    }
+
+    .btn {
+        text-align: center;
+        font-size: $font-size-body;
+        color: white;
+    }
+}
+
+/* SECTION 1 */
+
+.fonctionnement {
+    margin-left: $margin-left;
+
+    h3 {
+        font-size: $font-size;
+        font-family: $roboto-bold;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .item {
+        padding-left: $padding-left;
+        padding-bottom: $padding-bottom;
+        padding-top: $padding-top;
+        padding-right: $padding-right;
+        border: $border;
+        border-radius: $border-radius;
+        background-color: $background-color;
+        box-shadow: 5px 5px 10px 1px rgb(238, 238, 238);
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            padding-left: 40px;
+            padding-right: 80px;
+            font-size: $font-size-body;
+            color: $primary;
+        }
+
+        .fa-mobile-alt {
+            padding-left: $padding-icones;
+        }
+
+        .fa-list-ul {
+            padding-left: $padding-icones;
+        }
+
+        .fa-store {
+            padding-left: $padding-icones;
+        }
+
+
+    }
+
+}
+
+
+/* SECTION 2 */
+
+.restaurants {
+    margin-top: 50px;
+    background-color: $background-color;
+    padding-bottom: 60px;
+
+    h3 {
+        font-size: $font-size;
+        font-family: $roboto-bold;
+        margin-left: $margin-left;
+        padding-top: 50px;
+    }
+
+    .menus {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+
+    .bannieres {
+        width: 100%;
+
+        a {
+            text-decoration: none;
+        }
+
+        figure {
+            border-radius: 1rem 1rem 1rem 1rem;
+            box-shadow: 0 0 16px #0000002e;
+            background-color: white;
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 1rem 1rem 0 0;
+            }
+
+            figcaption {
+                padding: 20px;
+                line-height: 25px;
+            }
+
+            strong {
+                color: black;
+                font-size: 20px;
+                font-family: $roboto-bold;
+            }
+
+            span {
+                color: black;
+                font-size: $font-size-body;
+                font-family: $roboto-thin;
+       
+            }
+            .fa-heart {
+                font-size: 35px;
+                color: $primary;
+            
+            }
+        }
+
+    }
+
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #353535;
+
+    .ohmyfood {
+        padding-top: 10px;
+        padding-left: 40px;
+        font-family: $shrikhand-regular;
+        color: $primary-white;
+        font-size: 20px;
+    }
+    .choix-footer li {
+        list-style-type: none;
+        padding-bottom: 10px;
+
+        a {
+            text-decoration: none;
+            color: $primary-white;
+        }
+
+        .fa-utensils {
+            color: $primary-white;
+            padding-right: 10px;
+        }
+
+        .fa-hands-helping {
+            color: $primary-white;
+            padding-right: 10px;
+        }
+
+    }
+}
+
+
+  
+                             /* LA PALETTE DU GOÛT */
+
+
+/* HEADER */
+
+header a {
+    float: left;
+    position: absolute;
+    margin-top : 30px;
+    margin-left: 30px;
+    font-size: 20px;
+    color: $primary;
+}
+
+
+/* DIV 1 */
+
+.first {
+    
+    .picture {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+}
+
+.menu {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: -5rem;
+    position: relative;
+
+    h3 {
+        font-family: $shrikhand-regular;
+        font-size: $font-size;
+        padding-left: 20px;
+        padding-top: 40px;
+    }
+}
+
+.contenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.food {
+    h2 {
+        font-size: 20px;
+    }
+}
+
+.bannieres {
+    background-color: white;
+    border: $border;
+    border-radius: $border-radius;
+    padding-right: 100px;
+
+    strong {
+        font-family: $roboto-bold;
+    
+    }
+
+    .amount {
+        font-family: $roboto-bold;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

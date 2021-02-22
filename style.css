@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Roboto-Bold";
   src: url("Roboto/Roboto-Bold.ttf") format("truetype");
@@ -19,12 +20,13 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  max-width: 1800px;
+  max-width: 1600px;
+  display: block;
+  margin: auto;
   font-family: "Roboto-Regular";
 }
 
+/* PAGE D'ACCUEIL */
 /* HEADER */
 .logo {
   display: block;
@@ -36,47 +38,71 @@ body {
   height: 30px;
 }
 
+/* DIV 1 */
 .location {
-  border-top: 1px solid #bebebe;
-  border-bottom: 1px solid #bebebe;
-  background-color: #c9c9c9;
+  border-top: 0.5px solid #c9c9c9;
+  -webkit-box-shadow: inset 5px 12px 7px -10px #d3d2d2;
+          box-shadow: inset 5px 12px 7px -10px #d3d2d2;
+  border-bottom: 0.5px solid #e7e7e7;
+  background-color: #e7e7e7;
 }
 
-.p1 {
+.location .p1 {
   text-align: center;
+  font-size: 18px;
 }
 
+.location .p1 .fa-map-marker-alt {
+  color: black;
+  padding-right: 15px;
+}
+
+/* DIV 2 */
 .exploration {
-  border-top: 1px solid #c9c9c9;
-  border-bottom: 1px solid #c9c9c9;
-  background-color: #e7e5e5;
+  border-top: 0.5px solid whitesmoke;
+  border-bottom: 0.5px solid whitesmoke;
+  background-color: whitesmoke;
+  padding-bottom: 60px;
 }
 
 .exploration h3 {
   text-align: center;
-  font-size: 25px;
+  font-size: 27px;
   font-family: "Roboto-Bold";
 }
 
 .exploration p {
   text-align: center;
+  font-family: "Roboto-Thin";
+  font-size: 22px;
+  padding-bottom: 10px;
 }
 
 .exploration .container {
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding: 15px;
+  border: 2px solid #b9b9b9;
+  border-radius: 2rem;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 
 .exploration .btn {
   text-align: center;
+  font-size: 18px;
+  color: white;
 }
 
+/* SECTION 1 */
 .fonctionnement {
   margin-left: 40px;
 }
 
 .fonctionnement h3 {
-  font-size: 25px;
+  font-size: 27px;
+  font-family: "Roboto-Bold";
 }
 
 .fonctionnement ul {
@@ -93,21 +119,208 @@ body {
 }
 
 .fonctionnement .item {
-  border: 2px solid #e6e6e6;
-  border-radius: 2rem;
+  padding-left: 15px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  padding-right: 110px;
+  border: 0.5px solid whitesmoke;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 5px 5px 10px 1px #eeeeee;
+          box-shadow: 5px 5px 10px 1px #eeeeee;
 }
 
 .fonctionnement li {
   list-style: none;
 }
 
-.fonctionnement a {
+.fonctionnement li a {
   text-decoration: none;
-  padding-left: 50px;
+  padding-left: 40px;
   padding-right: 80px;
+  font-size: 18px;
+  color: black;
 }
 
+.fonctionnement li .fa-mobile-alt {
+  padding-left: 10px;
+}
+
+.fonctionnement li .fa-list-ul {
+  padding-left: 10px;
+}
+
+.fonctionnement li .fa-store {
+  padding-left: 10px;
+}
+
+/* SECTION 2 */
 .restaurants {
+  margin-top: 50px;
+  background-color: whitesmoke;
+  padding-bottom: 60px;
+}
+
+.restaurants h3 {
+  font-size: 27px;
+  font-family: "Roboto-Bold";
   margin-left: 40px;
+  padding-top: 50px;
+}
+
+.restaurants .menus {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  -ms-grid-rows: (50%)[2];
+      grid-template-rows: repeat(2, 50%);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  row-gap: 5px;
+}
+
+.restaurants .bannieres {
+  width: 100%;
+}
+
+.restaurants .bannieres a {
+  text-decoration: none;
+}
+
+.restaurants .bannieres figure {
+  border-radius: 1rem 1rem 1rem 1rem;
+  -webkit-box-shadow: 0 0 16px #0000002e;
+          box-shadow: 0 0 16px #0000002e;
+  background-color: white;
+}
+
+.restaurants .bannieres figure img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.restaurants .bannieres figure figcaption {
+  padding: 20px;
+  line-height: 25px;
+}
+
+.restaurants .bannieres figure strong {
+  color: black;
+  font-size: 20px;
+  font-family: "Roboto-Bold";
+}
+
+.restaurants .bannieres figure span {
+  color: black;
+  font-size: 18px;
+  font-family: "Roboto-Thin";
+}
+
+.restaurants .bannieres figure .fa-heart {
+  font-size: 35px;
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  background-color: #353535;
+}
+
+footer .ohmyfood {
+  padding-top: 10px;
+  padding-left: 40px;
+  font-family: "Shrikhand-Regular";
+  color: white;
+  font-size: 20px;
+}
+
+footer .choix-footer li {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+footer .choix-footer li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .choix-footer li .fa-utensils {
+  color: white;
+  padding-right: 10px;
+}
+
+footer .choix-footer li .fa-hands-helping {
+  color: white;
+  padding-right: 10px;
+}
+
+/* LA PALETTE DU GOÛT */
+/* HEADER */
+header a {
+  float: left;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 20px;
+  color: black;
+}
+
+/* DIV 1 */
+.first .picture {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: -5rem;
+  position: relative;
+}
+
+.menu h3 {
+  font-family: "Shrikhand-Regular";
+  font-size: 27px;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+
+.contenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.food h2 {
+  font-size: 20px;
+}
+
+.bannieres {
+  background-color: white;
+  border: 0.5px solid whitesmoke;
+  border-radius: 20px;
+  padding-right: 100px;
+}
+
+.bannieres strong {
+  font-family: "Roboto-Bold";
+}
+
+.bannieres .amount {
+  font-family: "Roboto-Bold";
 }
 /*# sourceMappingURL=style.css.map */
