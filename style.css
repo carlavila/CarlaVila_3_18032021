@@ -78,21 +78,18 @@ body {
   padding-bottom: 10px;
 }
 
-.exploration .container {
+.exploration .container .btn {
+  font-size: 18px;
+  color: white;
   padding: 15px;
   border: 2px solid #b9b9b9;
   border-radius: 2rem;
-  width: 200px;
+  width: 300px;
+  display: block;
   margin-right: auto;
   margin-left: auto;
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
   background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-}
-
-.exploration .btn {
-  text-align: center;
-  font-size: 18px;
-  color: white;
 }
 
 /* SECTION 1 */
@@ -106,23 +103,18 @@ body {
 }
 
 .fonctionnement ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (30%)[3];
+      grid-template-columns: repeat(3, 30%);
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
 }
 
 .fonctionnement .item {
   padding-left: 15px;
   padding-bottom: 25px;
   padding-top: 25px;
-  padding-right: 110px;
   border: 0.5px solid whitesmoke;
   border-radius: 20px;
   background-color: whitesmoke;
@@ -137,7 +129,6 @@ body {
 .fonctionnement li a {
   text-decoration: none;
   padding-left: 40px;
-  padding-right: 80px;
   font-size: 18px;
   color: black;
 }
@@ -180,49 +171,64 @@ body {
   row-gap: 5px;
 }
 
-.restaurants .bannieres {
+.restaurants .cont-item {
   width: 100%;
 }
 
-.restaurants .bannieres a {
+.restaurants .cont-item a {
   text-decoration: none;
 }
 
-.restaurants .bannieres figure {
+.restaurants .cont-item figure {
   border-radius: 1rem 1rem 1rem 1rem;
   -webkit-box-shadow: 0 0 16px #0000002e;
           box-shadow: 0 0 16px #0000002e;
   background-color: white;
 }
 
-.restaurants .bannieres figure img {
+.restaurants .cont-item figure img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem 1rem 0 0;
 }
 
-.restaurants .bannieres figure figcaption {
+.restaurants .cont-item figure figcaption {
   padding: 20px;
   line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.restaurants .bannieres figure strong {
+.restaurants .cont-item figure figcaption strong {
   color: black;
   font-size: 20px;
   font-family: "Roboto-Bold";
 }
 
-.restaurants .bannieres figure span {
+.restaurants .cont-item figure figcaption span {
   color: black;
   font-size: 18px;
   font-family: "Roboto-Thin";
 }
 
-.restaurants .bannieres figure .fa-heart {
+.restaurants .cont-item figure figcaption .heart .fa-heart {
   font-size: 35px;
   color: black;
+}
+
+.restaurants .cont-item figure figcaption .heart .fa-heart:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 
 /* FOOTER */
@@ -258,7 +264,7 @@ footer .choix-footer li .fa-hands-helping {
   padding-right: 10px;
 }
 
-/* LA PALETTE DU GOÛT */
+/* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS*/
 /* HEADER */
 header a {
   float: left;
@@ -282,7 +288,7 @@ header a {
   border-radius: 20px;
   max-width: 1280px;
   margin: auto;
-  margin-top: -5rem;
+  margin-top: -6rem;
   position: relative;
 }
 
@@ -290,7 +296,7 @@ header a {
   font-family: "Shrikhand-Regular";
   font-size: 27px;
   padding-left: 20px;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .contenu {
@@ -303,6 +309,19 @@ header a {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.food {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .food h2 {
@@ -310,17 +329,77 @@ header a {
 }
 
 .bannieres {
+  margin-bottom: 20px;
   background-color: white;
   border: 0.5px solid whitesmoke;
   border-radius: 20px;
-  padding-right: 100px;
+  -webkit-box-shadow: 2px 2px 15px 1px #bdbdbd;
+          box-shadow: 2px 2px 15px 1px #bdbdbd;
+  padding: 20px;
 }
 
-.bannieres strong {
+.bannieres .legende {
+  float: left;
+}
+
+.bannieres .legende strong {
   font-family: "Roboto-Bold";
 }
 
 .bannieres .amount {
+  display: inline-block;
   font-family: "Roboto-Bold";
+}
+
+.footer .bouton {
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  border: 2px solid #b9b9b9;
+  border-radius: 2rem;
+  width: 200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+
+@media (max-width: 750px) {
+  body {
+    max-width: 700px;
+  }
+  .fonctionnement {
+    margin-left: auto;
+  }
+  .fonctionnement h3 {
+    margin-left: 20px;
+  }
+  .fonctionnement ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .fonctionnement ul .item {
+    width: 100%;
+  }
+  .restaurants .menus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 /*# sourceMappingURL=style.css.map */

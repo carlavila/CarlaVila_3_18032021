@@ -32,7 +32,7 @@ $shrikhand-regular: "Shrikhand-Regular";
 $padding-left: 15px;
 $padding-bottom: 25px;
 $padding-top : 25px;
-$padding-right: 110px;
+$padding-right: 100px;
 $padding-icones: 10px;
 $border : 0.5px solid rgb(245, 245, 245);
 $border-radius: 20px;
@@ -95,7 +95,7 @@ body {
         font-family: $roboto-bold;
     }
 
-    p{
+    p {
         text-align: center;
         font-family: $roboto-thin;
         font-size: 22px;
@@ -103,18 +103,20 @@ body {
     }
 
     .container {
-        padding: 15px;
-        border: 2px solid #b9b9b9;
-        border-radius: 2rem;
-        width: 200px;
-        margin-right: auto;
-        margin-left: auto;
-        background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));    }
+       
 
-    .btn {
-        text-align: center;
-        font-size: $font-size-body;
-        color: white;
+        .btn {
+            font-size: $font-size-body;
+            color: white;
+            padding: 15px;
+            border: 2px solid #b9b9b9;
+            border-radius: 2rem;
+            width: 300px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+        }
     }
 }
 
@@ -129,21 +131,21 @@ body {
     }
 
     ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        column-gap: 30px;
     }
 
     .item {
         padding-left: $padding-left;
         padding-bottom: $padding-bottom;
         padding-top: $padding-top;
-        padding-right: $padding-right;
         border: $border;
         border-radius: $border-radius;
         background-color: $background-color;
         box-shadow: 5px 5px 10px 1px rgb(238, 238, 238);
     }
+
 
     li {
         list-style: none;
@@ -151,7 +153,6 @@ body {
         a {
             text-decoration: none;
             padding-left: 40px;
-            padding-right: 80px;
             font-size: $font-size-body;
             color: $primary;
         }
@@ -167,10 +168,7 @@ body {
         .fa-store {
             padding-left: $padding-icones;
         }
-
-
     }
-
 }
 
 
@@ -196,7 +194,8 @@ body {
         row-gap: 5px;
     }
 
-    .bannieres {
+
+    .cont-item {
         width: 100%;
 
         a {
@@ -210,7 +209,7 @@ body {
 
             img {
                 width: 100%;
-                height: 200px;
+                height: 250px;
                 object-fit: cover;
                 border-radius: 1rem 1rem 0 0;
             }
@@ -218,29 +217,41 @@ body {
             figcaption {
                 padding: 20px;
                 line-height: 25px;
-            }
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
 
-            strong {
-                color: black;
-                font-size: 20px;
-                font-family: $roboto-bold;
-            }
+                strong {
+                    color: black;
+                    font-size: 20px;
+                    font-family: $roboto-bold;
+                }
 
-            span {
-                color: black;
-                font-size: $font-size-body;
-                font-family: $roboto-thin;
+                span {
+                    color: black;
+                    font-size: $font-size-body;
+                    font-family: $roboto-thin;
+
+                }
+
+                .heart {
+                    .fa-heart {
+                        font-size: 35px;
+                        color: $primary;
+                    }
+                        
+                    .fa-heart:hover {
+                        background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+                    }
+                }
+
+                
+
+                
        
             }
-            .fa-heart {
-                font-size: 35px;
-                color: $primary;
-            
-            }
         }
-
     }
-
 }
 
 /* FOOTER */
@@ -279,7 +290,7 @@ footer {
 
 
   
-                             /* LA PALETTE DU GOÛT */
+    /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS*/
 
 
 /* HEADER */
@@ -303,7 +314,6 @@ header a {
         height: 400px;
         object-fit: cover;
     }
-
 }
 
 .menu {
@@ -311,55 +321,115 @@ header a {
     border-radius: $border-radius;
     max-width: 1280px;
     margin: auto;
-    margin-top: -5rem;
+    margin-top: -6rem;
     position: relative;
 
     h3 {
         font-family: $shrikhand-regular;
         font-size: $font-size;
         padding-left: 20px;
-        padding-top: 40px;
+        padding-top: 30px;
+       
     }
+
+    
 }
 
 .contenu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-bottom: 50px;
 }
 
 .food {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     h2 {
         font-size: 20px;
     }
 }
 
 .bannieres {
+    margin-bottom: 20px;
     background-color: white;
     border: $border;
     border-radius: $border-radius;
-    padding-right: 100px;
-
-    strong {
-        font-family: $roboto-bold;
+    box-shadow: 2px 2px 15px 1px rgb(189, 189, 189);
+    padding: 20px;
     
+    .legende {
+        float: left;
+        strong {
+            font-family: $roboto-bold;
+        
+        }
     }
 
     .amount {
+        display: inline-block;
         font-family: $roboto-bold;
+
     }
 }
 
+.footer {
+
+    .bouton {
+        font-size: $font-size-body;
+        color: white;
+        padding: 10px;
+        border: 2px solid #b9b9b9;
+        border-radius: 2rem;
+        width: 200px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+    }
+}
+
+@media (max-width: 750px) {
+
+    body {
+        max-width: 700px;
+    }
+
+    .fonctionnement {
+        margin-left: auto;
+
+        h3 {
+            margin-left: 20px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item {
+               width: 100%
+            }
+
+
+            }
+
+            
+        }
+
+    .restaurants {
+        .menus {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
 
 
 
-
-
-
-
-
-
-
+}
 
 
 
