@@ -59,10 +59,12 @@ body {
 
 /* DIV 2 */
 .exploration {
+  padding-bottom: 60px;
   border-top: 0.5px solid whitesmoke;
   border-bottom: 0.5px solid whitesmoke;
   background-color: whitesmoke;
-  padding-bottom: 60px;
+  border-radius: 20px;
+  border: 0.5px solid whitesmoke;
 }
 
 .exploration h3 {
@@ -79,17 +81,17 @@ body {
 }
 
 .exploration .container .btn {
-  font-size: 18px;
-  color: white;
-  padding: 15px;
-  border: 2px solid #b9b9b9;
-  border-radius: 2rem;
-  width: 300px;
   display: block;
   margin-right: auto;
   margin-left: auto;
+  padding: 15px;
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
   background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  border: 2px solid #b9b9b9;
+  border-radius: 2rem;
+  font-size: 18px;
+  color: white;
+  width: 250px;
 }
 
 /* SECTION 1 */
@@ -115,11 +117,11 @@ body {
   padding-left: 15px;
   padding-bottom: 25px;
   padding-top: 25px;
-  border: 0.5px solid whitesmoke;
-  border-radius: 20px;
   background-color: whitesmoke;
-  -webkit-box-shadow: 5px 5px 10px 1px #eeeeee;
-          box-shadow: 5px 5px 10px 1px #eeeeee;
+  border-radius: 20px;
+  border: 0.5px solid whitesmoke;
+  -webkit-box-shadow: 5px 5px 10px 1px #dbdbdb;
+          box-shadow: 5px 5px 10px 1px #dbdbdb;
 }
 
 .fonctionnement li {
@@ -194,6 +196,16 @@ body {
   border-radius: 1rem 1rem 0 0;
 }
 
+.restaurants .cont-item figure .new {
+  display: inline-block;
+  position: absolute;
+  background-color: #99e2d0;
+  color: #1b6150;
+  padding: .5rem;
+  border-radius: .125rem;
+  margin-left: -100px;
+}
+
 .restaurants .cont-item figure figcaption {
   padding: 20px;
   line-height: 25px;
@@ -223,7 +235,9 @@ body {
 
 .restaurants .cont-item figure figcaption .heart .fa-heart {
   font-size: 35px;
-  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .restaurants .cont-item figure figcaption .heart .fa-heart:hover {
@@ -264,13 +278,12 @@ footer .choix-footer li .fa-hands-helping {
   padding-right: 10px;
 }
 
-/* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS*/
+/* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
 /* HEADER */
-header a {
-  float: left;
+.arrow a {
+  left: 30px;
   position: absolute;
-  margin-top: 30px;
-  margin-left: 30px;
+  padding-top: 25px;
   font-size: 20px;
   color: black;
 }
@@ -283,9 +296,18 @@ header a {
      object-fit: cover;
 }
 
+header a {
+  right: 30px;
+  position: absolute;
+  margin-left: 30px;
+  font-size: 25px;
+  color: black;
+}
+
 .menu {
   background-color: whitesmoke;
   border-radius: 20px;
+  border: 0.5px solid whitesmoke;
   max-width: 1280px;
   margin: auto;
   margin-top: -6rem;
@@ -296,7 +318,6 @@ header a {
   font-family: "Shrikhand-Regular";
   font-size: 27px;
   padding-left: 20px;
-  padding-top: 30px;
 }
 
 .contenu {
@@ -329,6 +350,16 @@ header a {
 }
 
 .bannieres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 20px;
   background-color: white;
   border: 0.5px solid whitesmoke;
@@ -347,28 +378,32 @@ header a {
 }
 
 .bannieres .amount {
-  display: inline-block;
   font-family: "Roboto-Bold";
 }
 
+.bannieres .fa-check-circle {
+  display: none;
+}
+
 .footer .bouton {
-  font-size: 18px;
-  color: white;
-  padding: 10px;
-  border: 2px solid #b9b9b9;
-  border-radius: 2rem;
-  width: 200px;
   display: block;
   margin-right: auto;
   margin-left: auto;
+  padding: 15px;
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
   background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  border: 2px solid #b9b9b9;
+  border-radius: 2rem;
+  font-size: 18px;
+  color: white;
+  width: 250px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   body {
-    max-width: 700px;
+    max-width: 800px;
   }
+  /* PAGE D'ACCUEIL */
   .fonctionnement {
     margin-left: auto;
   }
@@ -386,9 +421,10 @@ header a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-left: 0;
   }
   .fonctionnement ul .item {
-    width: 100%;
+    margin: 10px;
   }
   .restaurants .menus {
     display: -webkit-box;
@@ -400,6 +436,35 @@ header a {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
+  .contenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .food {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .food h2 {
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

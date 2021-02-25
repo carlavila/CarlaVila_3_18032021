@@ -20,6 +20,8 @@
     src: url("Shrikhand/Shrikhand-Regular.ttf") format("truetype");
 }
 
+@import "mixins.scss";
+
 $primary: black;
 $primary-white: white;
 $margin-left: 40px;
@@ -34,9 +36,6 @@ $padding-bottom: 25px;
 $padding-top : 25px;
 $padding-right: 100px;
 $padding-icones: 10px;
-$border : 0.5px solid rgb(245, 245, 245);
-$border-radius: 20px;
-$background-color: rgb(245, 245, 245);
 
 
 body {
@@ -62,6 +61,7 @@ body {
     height: 30px;
 }
 
+
 /* DIV 1 */
 
 .location {
@@ -81,14 +81,15 @@ body {
     }
 }
 
+
 /* DIV 2 */
 
 .exploration {
+    padding-bottom: 60px;
     border-top: 0.5px solid  rgb(245, 245, 245);
     border-bottom: 0.5px solid rgb(245, 245, 245);
-    background-color: $background-color;
-    padding-bottom: 60px;
-
+    @include blockproperty;
+    
     h3 {
         text-align: center;
         font-size: $font-size;
@@ -103,22 +104,14 @@ body {
     }
 
     .container {
-       
-
+    
         .btn {
-            font-size: $font-size-body;
-            color: white;
-            padding: 15px;
-            border: 2px solid #b9b9b9;
-            border-radius: 2rem;
-            width: 300px;
-            display: block;
-            margin-right: auto;
-            margin-left: auto;
-            background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+            @include btn;
         }
+
     }
 }
+
 
 /* SECTION 1 */
 
@@ -140,10 +133,8 @@ body {
         padding-left: $padding-left;
         padding-bottom: $padding-bottom;
         padding-top: $padding-top;
-        border: $border;
-        border-radius: $border-radius;
-        background-color: $background-color;
-        box-shadow: 5px 5px 10px 1px rgb(238, 238, 238);
+        @include blockproperty;
+        box-shadow: 5px 5px 10px 1px rgb(219, 219, 219);
     }
 
 
@@ -176,7 +167,7 @@ body {
 
 .restaurants {
     margin-top: 50px;
-    background-color: $background-color;
+    background-color: rgb(245, 245, 245);
     padding-bottom: 60px;
 
     h3 {
@@ -187,11 +178,7 @@ body {
     }
 
     .menus {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(2, 50%);
-        column-gap: 5px;
-        row-gap: 5px;
+        @include grid;
     }
 
 
@@ -214,11 +201,20 @@ body {
                 border-radius: 1rem 1rem 0 0;
             }
 
+            .new {
+                display: inline-block;
+                position: absolute;
+                background-color: #99e2d0;
+                color: #1b6150;
+                padding: .5rem;
+                border-radius: .125rem;
+                margin-left: -100px;
+            }
+
             figcaption {
                 padding: 20px;
                 line-height: 25px;
-                display: flex;
-                flex-direction: row;
+                @include flex-row;
                 justify-content: space-between;
 
                 strong {
@@ -237,22 +233,20 @@ body {
                 .heart {
                     .fa-heart {
                         font-size: 35px;
-                        color: $primary;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
                     }
                         
                     .fa-heart:hover {
                         background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
                     }
                 }
-
-                
-
-                
-       
             }
         }
     }
 }
+
 
 /* FOOTER */
 
@@ -266,6 +260,7 @@ footer {
         color: $primary-white;
         font-size: 20px;
     }
+
     .choix-footer li {
         list-style-type: none;
         padding-bottom: 10px;
@@ -284,24 +279,24 @@ footer {
             color: $primary-white;
             padding-right: 10px;
         }
-
     }
 }
 
-
   
-    /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS*/
+    /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
 
 
 /* HEADER */
 
-header a {
-    float: left;
-    position: absolute;
-    margin-top : 30px;
-    margin-left: 30px;
-    font-size: 20px;
-    color: $primary;
+.arrow {
+
+    a {
+        left: 30px;
+        position: absolute;
+        padding-top: 25px;
+        font-size: 20px;
+        color: $primary; 
+    }
 }
 
 
@@ -316,9 +311,16 @@ header a {
     }
 }
 
+header a {    
+    right: 30px;
+    position: absolute;
+    margin-left: 30px;
+    font-size: 25px;
+    color: $primary;
+}
+
 .menu {
-    background-color: $background-color;
-    border-radius: $border-radius;
+    @include blockproperty;
     max-width: 1280px;
     margin: auto;
     margin-top: -6rem;
@@ -328,23 +330,17 @@ header a {
         font-family: $shrikhand-regular;
         font-size: $font-size;
         padding-left: 20px;
-        padding-top: 30px;
-       
     }
-
-    
 }
 
 .contenu {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-around;
     padding-bottom: 50px;
 }
 
 .food {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-around;
 
     h2 {
@@ -353,49 +349,48 @@ header a {
 }
 
 .bannieres {
+    @include flex-row;
+    justify-content: space-between;
     margin-bottom: 20px;
     background-color: white;
-    border: $border;
-    border-radius: $border-radius;
+    border: 0.5px solid rgb(245, 245, 245);
+    border-radius: 20px;
     box-shadow: 2px 2px 15px 1px rgb(189, 189, 189);
     padding: 20px;
     
     .legende {
         float: left;
+
         strong {
             font-family: $roboto-bold;
-        
         }
     }
 
     .amount {
-        display: inline-block;
         font-family: $roboto-bold;
+    }
 
+    .fa-check-circle {
+        display: none;
     }
 }
 
 .footer {
 
     .bouton {
-        font-size: $font-size-body;
-        color: white;
-        padding: 10px;
-        border: 2px solid #b9b9b9;
-        border-radius: 2rem;
-        width: 200px;
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+       @include btn;
     }
 }
 
-@media (max-width: 750px) {
+
+
+@media (max-width: 800px) {
 
     body {
-        max-width: 700px;
+        max-width: 800px;
     }
+
+                                /* PAGE D'ACCUEIL */
 
     .fonctionnement {
         margin-left: auto;
@@ -405,30 +400,42 @@ header a {
         }
 
         ul {
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
             justify-content: space-between;
+            padding-left: 0;
 
             .item {
-               width: 100%
+               margin: 10px;
             }
-
-
-            }
-
-            
         }
+    }
 
     .restaurants {
         .menus {
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
             justify-content: space-around;
         }
     }
 
+    /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
 
 
+    .contenu {
+        @include flex-column;
+        justify-content: space-around;
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .food {
+        @include flex-column;
+        justify-content: space-around;
+    
+        h2 {
+            font-size: 20px;
+        }
+    }
 }
 
 
