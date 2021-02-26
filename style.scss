@@ -85,7 +85,6 @@ body {
 /* DIV 2 */
 
 .exploration {
-    padding-bottom: 60px;
     border-top: 0.5px solid  rgb(245, 245, 245);
     border-bottom: 0.5px solid rgb(245, 245, 245);
     @include blockproperty;
@@ -103,14 +102,48 @@ body {
         padding-bottom: 10px;
     }
 
-    .container {
-    
-        .btn {
-            @include btn;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(245, 245, 245);
+        z-index: 1;
+
+        button {
+            border: 0;
+            color: $primary-white;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+            border-radius: 2rem;
+            font-size: $font-size-body;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
+        button::after {
+            content: "";
+            width: 400px;
+            height: 400px;   
+            background: linear-gradient(0deg,rgba(147,86,220,.9) 50%, rgba(255,121,218,.9) 100% );
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+
+        button:hover::after {
+            
+        }
+
+        button:hover {
+            box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+        }
     }
-}
 
 
 /* SECTION 1 */
@@ -375,11 +408,42 @@ header a {
     }
 }
 
-.footer {
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .bouton {
-       @include btn;
-    }
+    button {
+            border: 0;
+            color: $primary-white;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            padding: 15px;
+            border-radius: 2rem;
+            font-size: $font-size-body;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button::after {
+            content: "";
+            width: 400px;
+            height: 400px;   
+            background: linear-gradient(0deg,rgba(147,86,220,.9) 50%, rgba(255,121,218,.9) 100% );
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            transition: all 0.5s;
+        }
+
+        button:hover::after {
+            
+        }
+
+        button:hover {
+            box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+        }
 }
 
 

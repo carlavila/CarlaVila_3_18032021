@@ -59,7 +59,6 @@ body {
 
 /* DIV 2 */
 .exploration {
-  padding-bottom: 60px;
   border-top: 0.5px solid whitesmoke;
   border-bottom: 0.5px solid whitesmoke;
   background-color: whitesmoke;
@@ -80,18 +79,51 @@ body {
   padding-bottom: 10px;
 }
 
-.exploration .container .btn {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: whitesmoke;
+  z-index: 1;
+}
+
+.btn button {
+  border: 0;
+  color: white;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
   padding: 15px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
-  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-  border: 2px solid #b9b9b9;
   border-radius: 2rem;
   font-size: 18px;
-  color: white;
-  width: 250px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn button::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 50%, rgba(255, 121, 218, 0.9) 100%);
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 2;
+}
+
+.btn button:hover {
+  -webkit-box-shadow: 5px 5px 10px 1px #b8b8b8;
+          box-shadow: 5px 5px 10px 1px #b8b8b8;
 }
 
 /* SECTION 1 */
@@ -385,18 +417,48 @@ header a {
   display: none;
 }
 
-.footer .bouton {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn button {
+  border: 0;
+  color: white;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
   padding: 15px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
-  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-  border: 2px solid #b9b9b9;
   border-radius: 2rem;
   font-size: 18px;
-  color: white;
-  width: 250px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn button::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 50%, rgba(255, 121, 218, 0.9) 100%);
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.btn button:hover {
+  -webkit-box-shadow: 5px 5px 10px 1px #b8b8b8;
+          box-shadow: 5px 5px 10px 1px #b8b8b8;
 }
 
 @media (max-width: 800px) {
