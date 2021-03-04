@@ -5,42 +5,6 @@
     border : 0.5px solid rgb(245, 245, 245);
 }
 
-@mixin btn-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(245, 245, 245);
-    z-index: -2;
-    padding-bottom: 20px;
-}
-
-@mixin button {
-    border: 0;
-    color: $primary-white;
-    background: transparent;
-    position: relative;
-    overflow: hidden;
-    padding: 15px;
-    border-radius: 2rem;
-    font-size: $font-size-body;
-    cursor: pointer;
-    transition: all 0.5s;
-    z-index: 1;
-    box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
-}
-
-@mixin button-after {
-    content: "";
-    width: 400px;
-    height: 400px;  
-    background: linear-gradient(100deg,#ff79da, #9356dc);
-    position: absolute;
-    top: -50px;
-    left: -100px;
-    transition: all 0.5s;
-    z-index: -1;
-}
-
 @mixin grid {
     display: grid;
     grid-template-columns: repeat(2, 50%);

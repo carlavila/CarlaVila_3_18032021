@@ -141,21 +141,50 @@ body {
     }
 
     .btn {
-        @include btn-block;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(245, 245, 245);
+        padding-bottom: 20px;
+    
         button {
-            @include button;
-        }
-
-        button::after {
-            @include button-after;
-            
-        }
-
-        button:hover {
+            border: 0;
+            color: $primary-white;
+            background: linear-gradient(100deg,#ff79da, #9356dc);
             box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+            padding: 15px;
+            border-radius: 2rem;
+            font-size: $font-size-body;
+            cursor: pointer;
         }
-    }
+    
+        button:hover {
+            animation: button 0.6s both;
+            -webkit-animation: button 0.6s both;
+        }
+    
+          @keyframes button {
+            0% {
+              text-shadow: 0 0 0 rgba(170, 170, 170, 0);
+            }
+            100% {
+              text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
+              box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
+            }
+          }
+    
+          @-webkit-keyframes button {
+            0% {
+              text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            100% {
+                text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
+                box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
+            }
+          }
+
+
+          }
 
 
 /* SECTION 1 */
@@ -315,9 +344,6 @@ body {
                     
                     }
                 }
-
-
-
             }
         }
     }
@@ -474,92 +500,181 @@ header a {
         font-family: $roboto-bold;
     }
 
-    .check {
-        width: 80px;
-        position: relative;
-        border-radius: 0 20px 20px 0px;
-        background: #99e2d0;
+
+    .rotate-div {
+        width: 30px;
+        height: 50px;
+
+        .check {
+            color: #99E2D0;
+            font-size: 25px;
+
+            .check:hover {
+                animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         
-        .fa-check-circle {
-            color: $primary-white;
+        
+                @keyframes slide-in-right {
+                    0% {
+                       transform: translateX(1000px); 
+                       -webkit-transform: translateX(1000px);
+                       opacity: 0;
+                    }
+                    100% {
+                       transform: translateX(0);
+                       -webkit-transform: translateX(0);
+                       opacity: 1;
+                    }
+                }        
+        
+                @-webkit-keyframes slide-in-right{
+                    0% {
+                        transform: translateX(1000px);
+                        -webkit-transform: translateX(1000px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateX(0);
+                        -webkit-transform: translateX(0);
+                        opacity: 1;
+                    }
+                } 
+            }
+
+            .fa-check-circle:hover {
+                animation: rotate-check 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                -webkit-animation: rotate-check 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+        
+                @keyframes rotate-check {
+                    0% {
+                        transform: rotate(360deg);
+                        -webkit-transform: rotate(360deg);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: rotate(0);
+                        -webkit-transform: rotate(0);
+                        opacity: 1;
+                    }
+                }
+
+                @-webkit-keyframes rotate-check {
+                    0% {
+                        transform: rotate(360deg);
+                        -webkit-transform: rotate(360deg);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: rotate(0);
+                        -webkit-transform: rotate(0);
+                        opacity: 1;
+                    }
+                }
         }
     }
-
-    
 }
+
 
 .btn {
-    @include btn-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(245, 245, 245);
+    padding-bottom: 20px;
 
     button {
-        @include button;
+        border: 0;
+        color: $primary-white;
+        background: linear-gradient(100deg,#ff79da, #9356dc);
+        box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+        padding: 15px;
+        border-radius: 2rem;
+        font-size: $font-size-body;
+        cursor: pointer;
     }
 
-    button::after {
-        @include button-after;
-        
-    }
 
     button:hover {
-        box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+        animation: button 0.6s both;
+        -webkit-animation: button 0.6s both;
     }
+
+    @keyframes button {
+        0% {
+          text-shadow: 0 0 0 rgba(170, 170, 170, 0);
+        }
+        100% {
+          text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
+          box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
+        }
+      }
+
+      @-webkit-keyframes button {
+        0% {
+          text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+        100% {
+            text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
+            box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
+        }
 }
 
+}
 
 @media (max-width: 800px) {
 
-    body {
-        max-width: 800px;
+
+    /* PAGE D'ACCUEIL */
+
+.fonctionnement {
+    margin-left: auto;
+
+    h3 {
+        margin-left: 20px;
     }
 
-                                /* PAGE D'ACCUEIL */
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 0;
 
-    .fonctionnement {
-        margin-left: auto;
-
-        h3 {
-            margin-left: 20px;
-        }
-
-        ul {
-            @include flex-column;
-            justify-content: space-between;
-            padding-left: 0;
-
-            .item {
-               margin: 10px;
-            }
+        .item {
+            margin: 10px;
         }
     }
+}
 
-    .restaurants {
-        .menus {
-            @include flex-column;
-            justify-content: space-around;
-        }
+.restaurants {
+
+    .menus {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
+}
 
-    /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
+/* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
 
 
-    .contenu {
-        @include flex-column;
+.contenu {
+        display: flex;
+        flex-direction: column;
         justify-content: space-around;
         padding-bottom: 50px;
         padding-left: 20px;
         padding-right: 20px;
-    }
-    
-    .food {
-        @include flex-column;
-        justify-content: space-around;
-    
-        h2 {
-            font-size: 20px;
-        }
+}
+
+.food {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2 {
+        font-size: 20px;
     }
 }
 
-
-
-
+}
