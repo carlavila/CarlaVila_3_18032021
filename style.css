@@ -342,16 +342,28 @@ body {
   font-family: "Roboto-Thin";
 }
 
-.restaurants .cont-item figure figcaption .fa-heart {
+.restaurants .cont-item figure figcaption .far {
+  display: block;
   font-size: 35px;
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: black;
 }
 
-.restaurants .cont-item figure figcaption .fa-heart .fa-heart:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
-  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+.restaurants .cont-item figure figcaption .far .far:hover {
+  display: none;
+}
+
+.restaurants .cont-item figure figcaption .fas {
+  display: none;
+}
+
+.restaurants .cont-item figure figcaption .fas:hover {
+  display: block;
+  font-size: 35px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 
 /* FOOTER */
@@ -394,7 +406,6 @@ footer .choix-footer li .fa-hands-helping {
   position: absolute;
   padding-top: 25px;
   font-size: 20px;
-  color: black;
 }
 
 /* DIV 1 */
@@ -447,8 +458,6 @@ header a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 .food h2 {

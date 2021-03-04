@@ -333,16 +333,28 @@ body {
 
                 }
 
-                .fa-heart {
+                .far {
+                    display: block;
                     font-size: 35px;
                     background-clip: text;
                     -webkit-background-clip: text;
-                    color: transparent;
+                    color: black;
 
-                    .fa-heart:hover{
-                        background: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
-                    
+                    .far:hover{
+                        display: none;
                     }
+                }
+
+                .fas {
+                    display: none;
+                }
+
+                .fas:hover {
+                    display: block;
+                    font-size: 35px;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));;
                 }
             }
         }
@@ -397,7 +409,6 @@ footer {
         position: absolute;
         padding-top: 25px;
         font-size: 20px;
-        color: $primary; 
     }
 }
 
@@ -444,7 +455,6 @@ header a {
 
 .food {
     @include flex-column;
-    justify-content: space-around;
 
     h2 {
         font-size: 20px;
