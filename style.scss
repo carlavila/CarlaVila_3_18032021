@@ -22,20 +22,28 @@
 
 @import "mixins.scss";
 
+
 $primary: black;
 $primary-white: white;
-$margin-left: 40px;
+$primary-purple: #9356DC;
+$primary-pink: #FF79DA;
+$primary-green: #99E2D0;
+$primary-footer: #353535;
+
+
 $font-size: 27px;
 $font-size-body: 18px;
+
 $roboto-bold: "Roboto-Bold";
 $roboto-regular: "Roboto-Regular";
 $roboto-thin: "Roboto-Thin";
 $shrikhand-regular: "Shrikhand-Regular";
-$padding-left: 15px;
-$padding-bottom: 25px;
-$padding-top : 25px;
-$padding-right: 100px;
+
 $padding-icones: 10px;
+
+
+
+                                /* PAGE D'ACCUEIL */
 
 
 body {
@@ -45,42 +53,78 @@ body {
     font-family: $roboto-regular;
 }
 
-
-                                /* PAGE D'ACCUEIL */
-
-
 .loader {
-    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-white;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    z-index: 5;
     margin: auto;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border: 16px solid #bdc3c7;
-    width: 120px;
-    height: 120px;
-    border-top-color: #9356DC;
-    border-right-color: #FF79DA;
-    border-bottom-color: #e2d9d9c5;
-    border-left-color: #99E2D0;
-    border-radius: 50%;
-    animation: spin 3s linear infinite ;
-    -webkit-animation: spin 3s linear infinite;
-}
+    left: 0px;
+    animation: loader 3s ease-in-out both;
+    -webkit-animation: loader 3s ease-in-out both;;
+    pointer-events: none;
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+    .spinner {
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border: 16px solid #bdc3c7;
+        width: 120px;
+        height: 120px;
+        border-top-color: $primary-purple;
+        border-right-color: $primary-pink;
+        border-left-color: $primary-green;
+        border-bottom-color: #e2d9d9c5;
+        border-radius: 50%;
+        animation: spin 3s ease-in-out both;
+        -webkit-animation: spin 3s ease-in-out both;
 
-@-webkit-keyframes spin {
-    0% {
-        transform: rotate(0deg);
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loader {
+            0% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
     }
-    100% {
-        transform: rotate(360deg);
+
+    @-webkit-keyframes loader {
+        0% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            display: none;
+        }
     }
 }
 
@@ -89,10 +133,8 @@ body {
 
 .logo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin-left: auto; margin-right: auto;
+    padding-top: 25px; padding-bottom: 25px;
     width: 170px;
     height: 30px;
 }
@@ -181,16 +223,14 @@ body {
                 text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
                 box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
             }
-          }
-
-
-          }
+        }
+    }
 
 
 /* SECTION 1 */
 
 .fonctionnement {
-    margin-left: $margin-left;
+    margin-left: 40px;
 
     h3 {
         font-size: $font-size;
@@ -205,7 +245,7 @@ body {
 
     .number {
         color: $primary-white;
-        background: #9356dc;
+        background: $primary-purple;
         height: 1.5rem;
         width: 1.5rem;
         padding: 5px;
@@ -213,13 +253,10 @@ body {
     }
     
     .item {
-        padding-left: $padding-left;
-        padding-bottom: $padding-bottom;
-        padding-top: $padding-top;
         @include blockproperty;
+        padding-left: 15px; padding-bottom: 25px; padding-top: 25px;
         box-shadow: 5px 5px 10px 1px rgb(219, 219, 219);
     }
-
 
     li {
         list-style: none;
@@ -249,21 +286,20 @@ body {
 /* SECTION 2 */
 
 .restaurants {
-    margin-top: 50px;
     background-color: rgb(245, 245, 245);
+    margin-top: 50px;
     padding-bottom: 60px;
 
     h3 {
         font-size: $font-size;
         font-family: $roboto-bold;
-        margin-left: $margin-left;
+        margin-left: 40px;
         padding-top: 50px;
     }
 
     .menus {
         @include grid;
     }
-
 
     .cont-item {
         width: 100%;
@@ -294,8 +330,8 @@ body {
 
         figure {
             border-radius: 1rem 1rem 1rem 1rem;
-            box-shadow: 0 0 16px #0000002e;
-            background-color: white;
+            box-shadow: 0 0 16px $primary;
+            background-color: $primary-white;
 
             img {
                 width: 100%;
@@ -307,55 +343,55 @@ body {
             .new {
                 display: inline-block;
                 position: absolute;
-                background-color: #99e2d0;
+                border-radius: .125rem;
+                background-color: $primary-green;
                 color: #1b6150;
                 padding: .5rem;
-                border-radius: .125rem;
                 margin-left: -100px;
             }
 
             figcaption {
-                padding: 20px;
-                line-height: 25px;
                 @include flex-row;
                 justify-content: space-between;
+                padding: 20px;
+                line-height: 25px;
 
-                strong {
-                    color: black;
-                    font-size: 20px;
-                    font-family: $roboto-bold;
-                }
+                .description {
 
-                span {
-                    color: black;
-                    font-size: $font-size-body;
-                    font-family: $roboto-thin;
-
-                }
-
-                .far {
-                    display: block;
-                    font-size: 35px;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: black;
-
-                    .far:hover{
-                        display: none;
+                    strong {
+                        color: $primary;
+                        font-size: 20px;
+                        font-family: $roboto-bold;
+                    }
+    
+                    span {
+                        color: $primary;
+                        font-size: $font-size-body;
+                        font-family: $roboto-thin;
                     }
                 }
+                
+                .heart {
 
-                .fas {
-                    display: none;
+                    .far {
+                        display: block;
+                        font-size: 35px;
+                        color: $primary;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+    
+                    }
+    
+                    .fas {
+                        display: block;
+                        font-size: 35px;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: linear-gradient(0deg,$primary-purple,$primary-pink);
+                        
+                    }
                 }
-
-                .fas:hover {
-                    display: block;
-                    font-size: 35px;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));;
-                }
+                
             }
         }
     }
@@ -365,11 +401,10 @@ body {
 /* FOOTER */
 
 footer {
-    background-color: #353535;
+    background-color: $primary-footer;
 
     .ohmyfood {
-        padding-top: 10px;
-        padding-left: 40px;
+        padding-top: 10px; padding-left: 40px;
         font-family: $shrikhand-regular;
         color: $primary-white;
         font-size: 20px;
@@ -424,19 +459,34 @@ footer {
     }
 }
 
-header a {    
-    right: 30px;
-    position: absolute;
-    margin-left: 30px;
-    font-size: 25px;
+.fa-heart-white {
+    display: inline-block;
     color: $primary;
+    font-size: 35px;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    .fa-heart-white:hover{
+        display: none;
+    }
+}
+
+.fa-heart-color {
+    display: none;
+
+    .fa-heart-color:hover {
+        display: block;
+        font-size: 35px;
+        color: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
 }
 
 .menu {
     @include blockproperty;
     max-width: 1280px;
-    margin: auto;
-    margin-top: -6rem;
+    margin: auto; margin-top: -6rem;
     position: relative;
 
     h3 {
@@ -447,10 +497,10 @@ header a {
 }
 
 .contenu {
-    margin-left: 20px;
     display: grid;
     grid-template-columns: repeat(3, 390px);
     column-gap: 40px;
+    margin-left: 20px;
 }
 
 .food {
@@ -464,7 +514,7 @@ header a {
 .bannieres {
     display: flex;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: $primary-white;
     border: 0.5px solid rgb(245, 245, 245);
     border-radius: 20px;
     box-shadow: 2px 2px 10px 1px rgb(189, 189, 189);
@@ -516,7 +566,7 @@ header a {
         height: 50px;
 
         .check {
-            color: #99E2D0;
+            color: $primary-green;
             font-size: 25px;
 
             .check:hover {
@@ -581,7 +631,7 @@ header a {
                         opacity: 1;
                     }
                 }
-        }
+             }
     }
 }
 
@@ -594,11 +644,11 @@ header a {
     padding-bottom: 20px;
 
     button {
-        border: 0;
         color: $primary-white;
-        background: linear-gradient(100deg,#ff79da, #9356dc);
+        background: linear-gradient(100deg,$primary-pink, $primary-purple);
         box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
         padding: 15px;
+        border: 0;
         border-radius: 2rem;
         font-size: $font-size-body;
         cursor: pointer;
@@ -618,7 +668,7 @@ header a {
           text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
           box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
         }
-      }
+    }
 
       @-webkit-keyframes button {
         0% {
@@ -628,63 +678,62 @@ header a {
             text-shadow: 6px 6px 18px rgba(255, 255, 255, 0.829);
             box-shadow: 5px 5px 10px 1px rgb(133, 133, 133);
         }
+    }
 }
 
-}
+
 
 @media (max-width: 800px) {
 
 
     /* PAGE D'ACCUEIL */
 
-.fonctionnement {
-    margin-left: auto;
+    .fonctionnement {
+        margin-left: auto;
 
-    h3 {
-        margin-left: 20px;
-    }
+        h3 {
+            margin-left: 20px;
+        }
 
-    ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 0;
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 0;
 
-        .item {
-            margin: 10px;
+            .item {
+                margin: 10px;
+            }
         }
     }
-}
 
-.restaurants {
+    .restaurants {
 
-    .menus {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        .menus {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
     }
-}
+
+
 
 /* LA PALETTE DU GOÛT, LA NOTE ENCHANTÉE, À LA FRANCAISE, LE DÉLICE DES SENS */
 
-
-.contenu {
+    .contenu {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-bottom: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-}
-
-.food {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    h2 {
-        font-size: 20px;
+        padding-bottom: 50px; padding-left: 20px; padding-right: 20px;
     }
-}
 
+    .food {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h2 {
+            font-size: 20px;
+        }
+    }
 }
