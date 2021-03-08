@@ -235,11 +235,10 @@ body {
 }
 
 .fonctionnement .number {
+  margin-left: -30px;
   color: white;
   background: #9356DC;
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 5px;
+  padding: 4px 8px 4px;
   border-radius: 100px;
 }
 
@@ -384,19 +383,47 @@ body {
 }
 
 .restaurants .cont-item figure figcaption .heart .far {
-  display: block;
   font-size: 35px;
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
+.restaurants .cont-item figure figcaption .heart .far .far:hover {
+  display: none;
+}
+
 .restaurants .cont-item figure figcaption .heart .fas {
-  display: block;
+  display: none;
+}
+
+.restaurants .cont-item figure figcaption .heart .fas .fas:hover {
   font-size: 35px;
   background-clip: text;
   -webkit-background-clip: text;
   color: linear-gradient(0deg, #9356DC, #FF79DA);
+  animation: color-change 2s both;
+  -webkit-animation: color-change 2s both;
+}
+
+@keyframes color-change {
+  0% {
+    background: #ffffff;
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+    background: linear-gradient(0deg, #9356DC, #FF79DA);
+  }
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    background: #ffffff;
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+    background: linear-gradient(0deg, #9356DC, #FF79DA);
+  }
 }
 
 /* FOOTER */
@@ -439,6 +466,10 @@ footer .choix-footer li .fa-hands-helping {
   position: absolute;
   padding-top: 25px;
   font-size: 20px;
+}
+
+.arrow a .fa-arrow-left {
+  color: black;
 }
 
 /* DIV 1 */
@@ -507,6 +538,34 @@ footer .choix-footer li .fa-hands-helping {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-animation: item 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation: item 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes item {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes item {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .food h2 {
@@ -524,34 +583,6 @@ footer .choix-footer li .fa-hands-helping {
   -webkit-box-shadow: 2px 2px 10px 1px #bdbdbd;
           box-shadow: 2px 2px 10px 1px #bdbdbd;
   padding: 20px;
-  -webkit-animation: bannieres 2s cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation: bannieres 2s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-@keyframes bannieres {
-  0% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes bannieres {
-  0% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .bannieres .legende {
@@ -569,47 +600,77 @@ footer .choix-footer li .fa-hands-helping {
 }
 
 .bannieres .rotate-div {
-  width: 30px;
-  height: 50px;
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bannieres .rotate-div a {
+  text-decoration: none;
 }
 
 .bannieres .rotate-div .check {
-  color: #99E2D0;
-  font-size: 25px;
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #99E2D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100px;
 }
 
 .bannieres .rotate-div .check .check:hover {
-  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-check 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-check 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@keyframes slide-in-right {
+@-webkit-keyframes slide-check {
   0% {
-    transform: translateX(1000px);
-    -webkit-transform: translateX(1000px);
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
     -webkit-transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
-@-webkit-keyframes slide-in-right {
+@keyframes slide-check {
   0% {
-    transform: translateX(1000px);
-    -webkit-transform: translateX(1000px);
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
     -webkit-transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
-.bannieres .rotate-div .check .fa-check-circle:hover {
+.bannieres .rotate-div .check .fa-check-circle {
+  color: white;
+  font-size: 25px;
+}
+
+.bannieres .rotate-div .check .fa-check-circle .fa-check-circle:hover {
   animation: rotate-check 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   -webkit-animation: rotate-check 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
