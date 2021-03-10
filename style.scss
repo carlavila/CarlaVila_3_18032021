@@ -563,7 +563,7 @@ footer {
     h2 {
         font-size: 20px;
     }
-}
+
 
 .bannieres {
     display: flex;
@@ -584,6 +584,35 @@ footer {
 
     .amount {
         font-family: $roboto-bold;
+        
+        .amount:hover {
+            animation: left-amount 400ms linear both;
+            -webkit-animation: left-amount 400ms linear both;
+        }
+
+        @keyframes left-amount {
+            0% {
+                left: 5px;
+            }
+            50% {
+                left: 20px;
+            }
+            100% {
+                left: 40px;
+            }
+        }
+
+        @-webkit-keyframes left-amount {
+            0% {
+                left: 5px;
+            }
+            50% {
+                left: 20px;
+            }
+            100% {
+                left: 40px;
+            }
+        }
     }
 
 
@@ -597,6 +626,8 @@ footer {
         
         a {
             text-decoration: none;
+            color: $primary-white;
+            font-size: 25px;
         }
 
         .check {
@@ -611,21 +642,7 @@ footer {
 
             .check:hover {
                 -webkit-animation: slide-check 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-check 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    
-    
-                @-webkit-keyframes slide-check {
-                    0% {
-                        -webkit-transform: translateX(-1000px);
-                        transform: translateX(-1000px);
-                        opacity: 0;
-                    }
-                    100% {
-                        -webkit-transform: translateX(0);
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
+                animation: slide-check 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
                 @keyframes slide-check {
                     0% {
@@ -640,9 +657,20 @@ footer {
                     }
                 }
 
+                @-webkit-keyframes slide-check {
+                    0% {
+                        -webkit-transform: translateX(-1000px);
+                        transform: translateX(-1000px);
+                        opacity: 0;
+                    }
+                    100% {
+                        -webkit-transform: translateX(0);
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+
             .fa-check-circle {
-                color: $primary-white;
-                font-size: 25px;
 
                 .fa-check-circle:hover {
                     animation: rotate-check 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -677,6 +705,8 @@ footer {
                 }
             }
         }
+    }
+}
 }
 
 
@@ -733,7 +763,7 @@ footer {
     /* PAGE D'ACCUEIL */
 
     .fonctionnement {
-        margin-left: auto;
+        margin-left: 20px;
 
         h3 {
             margin-left: 20px;
