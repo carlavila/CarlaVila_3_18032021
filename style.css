@@ -382,48 +382,28 @@ body {
   font-family: "Roboto-Thin";
 }
 
-.restaurants .cont-item figure figcaption .heart .far {
+.restaurants .cont-item figure figcaption .far {
+  margin-left: -35px;
+  position: absolute;
   font-size: 35px;
   color: black;
   background-clip: text;
   -webkit-background-clip: text;
 }
 
-.restaurants .cont-item figure figcaption .heart .far .far:hover {
-  display: none;
-}
-
-.restaurants .cont-item figure figcaption .heart .fas {
-  display: none;
-}
-
-.restaurants .cont-item figure figcaption .heart .fas .fas:hover {
+.restaurants .cont-item figure figcaption .fas {
+  margin-left: -35px;
+  position: absolute;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(0deg, #9356DC, #FF79DA);
   font-size: 35px;
   background-clip: text;
   -webkit-background-clip: text;
-  color: linear-gradient(0deg, #9356DC, #FF79DA);
-  animation: color-change 2s both;
-  -webkit-animation: color-change 2s both;
+  color: transparent;
 }
 
-@keyframes color-change {
-  0% {
-    background: #ffffff;
-  }
-  100% {
-    background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-    background: linear-gradient(0deg, #9356DC, #FF79DA);
-  }
-}
-
-@-webkit-keyframes color-change {
-  0% {
-    background: #ffffff;
-  }
-  100% {
-    background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
-    background: linear-gradient(0deg, #9356DC, #FF79DA);
-  }
+.restaurants .cont-item figure figcaption .fas .fas:hover {
+  display: block;
 }
 
 /* FOOTER */
@@ -599,48 +579,22 @@ footer .choix-footer li .fa-hands-helping {
   font-family: "Roboto-Bold";
 }
 
-.food .bannieres .amount .amount:hover {
-  animation: left-amount 400ms linear both;
-  -webkit-animation: left-amount 400ms linear both;
-}
-
-@keyframes left-amount {
-  0% {
-    left: 5px;
-  }
-  50% {
-    left: 20px;
-  }
-  100% {
-    left: 40px;
-  }
-}
-
-@-webkit-keyframes left-amount {
-  0% {
-    left: 5px;
-  }
-  50% {
-    left: 20px;
-  }
-  100% {
-    left: 40px;
-  }
-}
-
 .food .bannieres .rotate-div {
-  background-color: #99E2D0;
-  margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0px 15px 15px 0px;
+  overflow: hidden;
+  width: 0%;
+  -webkit-transition: width 500ms;
+  transition: width 500ms;
 }
 
 .food .bannieres .rotate-div a {
@@ -649,82 +603,27 @@ footer .choix-footer li .fa-hands-helping {
   font-size: 25px;
 }
 
-.food .bannieres .rotate-div .check {
-  height: 1.6rem;
-  width: 1.6rem;
-  background-color: #99E2D0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.food .bannieres .rotate-div .fa-check-circle {
+  color: white;
+  font-size: 1.3em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotate(-1turn);
+          transform: rotate(-1turn);
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
 }
 
-.food .bannieres .rotate-div .check .check:hover {
-  -webkit-animation: slide-check 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-check 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes slide-check {
-  0% {
-    -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slide-check {
-  0% {
-    -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.food .bannieres .rotate-div .check .check:hover .fa-check-circle .fa-check-circle:hover {
-  animation: rotate-check 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  -webkit-animation: rotate-check 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes rotate-check {
-  0% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(0);
-    -webkit-transform: rotate(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes rotate-check {
-  0% {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(0);
-    -webkit-transform: rotate(0);
-    opacity: 1;
-  }
+.food .bannieres .check:hover {
+  width: 20%;
+  -webkit-transform: rotate(0turn);
+          transform: rotate(0turn);
 }
 
 .btn {

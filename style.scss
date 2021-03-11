@@ -369,49 +369,31 @@ body {
                         font-family: $roboto-thin;
                     }
                 }
-                
-                .heart {
 
-                    .far {
-                        font-size: 35px;
-                        color: $primary;
-                        background-clip: text;
-                        -webkit-background-clip: text;
+                .far {
+                    margin-left: -35px;
+                    position: absolute;
+                    font-size: 35px;
+                    color: $primary;
+                    background-clip: text;
+                    -webkit-background-clip: text;
                         
-                        .far:hover {
-                            display: none;
-                        }
+                    .far:hover {
+        
                     }
+                }
 
-                    .fas {
-                        display: none;
+                .fas {
+                    margin-left: -35px;
+                    position: absolute;
+                    background: linear-gradient(0deg, $primary-purple, $primary-pink);
+                    font-size: 35px;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
 
-                        .fas:hover {
-                            font-size: 35px;
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            color: linear-gradient(0deg,$primary-purple,$primary-pink);
-                            animation: color-change 2s both;
-                            -webkit-animation: color-change 2s both;
-                        }
-
-                            @keyframes color-change {
-                                0% {
-                                    background: #ffffff;
-                                }
-                                100% {
-                                    background: linear-gradient(0deg,$primary-purple,$primary-pink);
-                                }
-                            }
-
-                            @-webkit-keyframes color-change {
-                                0% {
-                                    background: #ffffff;
-                                }
-                                100% {
-                                    background: linear-gradient(0deg,$primary-purple,$primary-pink);
-                                }
-                            }
+                    .fas:hover {
+                            
                     }
                 }
             }
@@ -584,45 +566,17 @@ footer {
 
     .amount {
         font-family: $roboto-bold;
-        
-        .amount:hover {
-            animation: left-amount 400ms linear both;
-            -webkit-animation: left-amount 400ms linear both;
-        }
-
-        @keyframes left-amount {
-            0% {
-                left: 5px;
-            }
-            50% {
-                left: 20px;
-            }
-            100% {
-                left: 40px;
-            }
-        }
-
-        @-webkit-keyframes left-amount {
-            0% {
-                left: 5px;
-            }
-            50% {
-                left: 20px;
-            }
-            100% {
-                left: 40px;
-            }
-        }
     }
 
-
     .rotate-div {
-        background-color: $primary-green;
-        margin: -1rem -5rem -1rem 1rem;
-        width: 4rem;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        background-color: $primary-green;
+        border-radius: 0px 15px 15px 0px;
+        overflow: hidden;
+        width: 0%;
+        transition: width 500ms;
         
         a {
             text-decoration: none;
@@ -630,84 +584,23 @@ footer {
             font-size: 25px;
         }
 
-        .check {
-            height: 1.6rem;
-            width: 1.6rem;
-            background-color: $primary-green;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 100px;
-            
-
-            .check:hover {
-                -webkit-animation: slide-check 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-                animation: slide-check 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-                @keyframes slide-check {
-                    0% {
-                        -webkit-transform: translateX(-1000px);
-                        transform: translateX(-1000px);
-                        opacity: 0;
-                    }
-                    100% {
-                        -webkit-transform: translateX(0);
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-
-                @-webkit-keyframes slide-check {
-                    0% {
-                        -webkit-transform: translateX(-1000px);
-                        transform: translateX(-1000px);
-                        opacity: 0;
-                    }
-                    100% {
-                        -webkit-transform: translateX(0);
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-
             .fa-check-circle {
-
-                .fa-check-circle:hover {
-                    animation: rotate-check 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-                    -webkit-animation: rotate-check 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-                }
-        
-                    @keyframes rotate-check {
-                        0% {
-                            transform: rotate(360deg);
-                            -webkit-transform: rotate(360deg);
-                            opacity: 0;
-                        }
-                        100% {
-                            transform: rotate(0);
-                            -webkit-transform: rotate(0);
-                            opacity: 1;
-                        }
-                    }
-
-                    @-webkit-keyframes rotate-check {
-                        0% {
-                            transform: rotate(360deg);
-                            -webkit-transform: rotate(360deg);
-                            opacity: 0;
-                        }
-                        100% {
-                            transform: rotate(0);
-                            -webkit-transform: rotate(0);
-                            opacity: 1;
-                        }
-                    }
-                }
+                color: $primary-white;
+                font-size: 1.3em;
+                justify-content: center;
+                align-items: center;
+                transform: rotate(-1turn);
+                transition: transform 400ms ease-in-out;
             }
+    }
+
+        .check:hover {
+            width: 20%;
+            transform: rotate(0turn);
         }
     }
 }
-}
+
 
 
 .btn {
