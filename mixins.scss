@@ -22,3 +22,22 @@
     display: flex;
     flex-direction: column;
 }
+
+@mixin btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(245, 245, 245);
+    padding-bottom: 20px;
+}
+
+@mixin button {
+        border: 0;
+        color: $primary-white;
+        background: linear-gradient(100deg, $primary-pink, $primary-purple);
+        box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
+        padding: 15px;
+        border-radius: 2rem;
+        font-size: $font-size-body;
+        cursor: pointer;
+}

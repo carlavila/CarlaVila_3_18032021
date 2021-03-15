@@ -183,21 +183,10 @@ body {
 }
 
     .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgb(245, 245, 245);
-        padding-bottom: 20px;
+        @include btn;
     
         button {
-            border: 0;
-            color: $primary-white;
-            background: linear-gradient(100deg,#ff79da, #9356dc);
-            box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
-            padding: 15px;
-            border-radius: 2rem;
-            font-size: $font-size-body;
-            cursor: pointer;
+            @include button;
         }
     
         button:hover {
@@ -371,21 +360,20 @@ body {
                 }
 
                 .heart {
-                    display: flex;
-                    justify-content: flex-end;
+                    margin-right: 20px;
                 }
-              
-                .far {
+                
+                .blockicon-white {
                     position: absolute;
                     font-size: 35px;
                     color: $primary;
                 }
-
-                .far:hover {
+                
+                .blockicon-white:hover {
                     opacity: 0%;
                 }
-              
-                .fas {
+                
+                .blockicon-color {
                     position: relative;
                     background-image: linear-gradient(to left, $primary-purple, $primary-pink);
                     background-clip: text;
@@ -395,12 +383,12 @@ body {
                     opacity: 0%;
                     font-size: 35px;
                 }
-              
-                .fas:hover {
+                
+                .blockicon-color:hover {
                     opacity: 100%;
-                    animation: animatedheart 0.5s linear;
+                    animation: animatedheart 1s linear;
                 }
-
+                
                 @keyframes animatedheart {
                     0% {
                       background-position: left;
@@ -480,34 +468,50 @@ footer {
     }
 }
 
-/*
-.fa-heart-white {
-    position: relative;
-    display: inline-block;
-    color: $primary;
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.heart {
+    margin-right: 20px;
+}
+
+.blockicon-white {
+    position: absolute;
     font-size: 35px;
+    color: $primary;
+}
+
+.blockicon-white:hover {
+    opacity: 0%;
+}
+
+.blockicon-color {
+    position: relative;
+    background-image: linear-gradient(to left, $primary-purple, $primary-pink);
     background-clip: text;
     -webkit-background-clip: text;
-
-    .fa-heart-white:hover{
-
-    }
+    color: transparent;
+    background-size: 200%;
+    opacity: 0%;
+    font-size: 35px;
 }
 
-.fa-heart-color {
-
-
-    .fa-heart-color:hover {
-        display: block;
-        font-size: 35px;
-        color: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));;
-        background-clip: text;
-        -webkit-background-clip: text;
-    }
+.blockicon-color:hover {
+    opacity: 100%;
+    animation: animatedheart 1s linear;
 }
 
-*/
-
+@keyframes animatedheart {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
+}
 
 .menu {
     @include blockproperty;
@@ -566,13 +570,12 @@ footer {
 
 
 .bannieres {
-    background-color: white;
+    background-color: $primary-white;
     border-radius: 0.8rem;
     margin: 1rem;
     padding: 10px;
     display: flex;
     overflow: hidden;
-    animation: forwards linear 0.1s animationmenu;
     cursor: pointer;
     
     .legende {
@@ -676,23 +679,11 @@ footer {
 }
 
 
-
 .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(245, 245, 245);
-    padding-bottom: 20px;
+    @include btn;
 
     button {
-        color: $primary-white;
-        background: linear-gradient(100deg,$primary-pink, $primary-purple);
-        box-shadow: 5px 5px 10px 1px rgb(184, 184, 184);
-        padding: 15px;
-        border: 0;
-        border-radius: 2rem;
-        font-size: $font-size-body;
-        cursor: pointer;
+        @include button;
     }
 
 

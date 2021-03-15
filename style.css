@@ -179,7 +179,7 @@ body {
 .btn button {
   border: 0;
   color: white;
-  background: linear-gradient(100deg, #ff79da, #9356dc);
+  background: linear-gradient(100deg, #FF79DA, #9356DC);
   -webkit-box-shadow: 5px 5px 10px 1px #b8b8b8;
           box-shadow: 5px 5px 10px 1px #b8b8b8;
   padding: 15px;
@@ -383,25 +383,20 @@ body {
 }
 
 .restaurants .cont-item figure figcaption .heart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  margin-right: 20px;
 }
 
-.restaurants .cont-item figure figcaption .far {
+.restaurants .cont-item figure figcaption .blockicon-white {
   position: absolute;
   font-size: 35px;
   color: black;
 }
 
-.restaurants .cont-item figure figcaption .far:hover {
+.restaurants .cont-item figure figcaption .blockicon-white:hover {
   opacity: 0%;
 }
 
-.restaurants .cont-item figure figcaption .fas {
+.restaurants .cont-item figure figcaption .blockicon-color {
   position: relative;
   background-image: -webkit-gradient(linear, right top, left top, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(to left, #9356DC, #FF79DA);
@@ -413,10 +408,10 @@ body {
   font-size: 35px;
 }
 
-.restaurants .cont-item figure figcaption .fas:hover {
+.restaurants .cont-item figure figcaption .blockicon-color:hover {
   opacity: 100%;
-  -webkit-animation: animatedheart 0.5s linear;
-          animation: animatedheart 0.5s linear;
+  -webkit-animation: animatedheart 1s linear;
+          animation: animatedheart 1s linear;
 }
 
 @-webkit-keyframes animatedheart {
@@ -491,33 +486,60 @@ footer .choix-footer li .fa-hands-helping {
      object-fit: cover;
 }
 
-/*
-.fa-heart-white {
-    position: relative;
-    display: inline-block;
-    color: $primary;
-    font-size: 35px;
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    .fa-heart-white:hover{
-
-    }
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.fa-heart-color {
-
-
-    .fa-heart-color:hover {
-        display: block;
-        font-size: 35px;
-        color: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));;
-        background-clip: text;
-        -webkit-background-clip: text;
-    }
+.heart {
+  margin-right: 20px;
 }
 
-*/
+.blockicon-white {
+  position: absolute;
+  font-size: 35px;
+  color: black;
+}
+
+.blockicon-white:hover {
+  opacity: 0%;
+}
+
+.blockicon-color {
+  position: relative;
+  background-image: -webkit-gradient(linear, right top, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(to left, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  opacity: 0%;
+  font-size: 35px;
+}
+
+.blockicon-color:hover {
+  opacity: 100%;
+  -webkit-animation: animatedheart 1s linear;
+          animation: animatedheart 1s linear;
+}
+
+@keyframes animatedheart {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
 .menu {
   background-color: whitesmoke;
   border-radius: 20px;
@@ -595,8 +617,6 @@ footer .choix-footer li .fa-hands-helping {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  -webkit-animation: forwards linear 0.1s animationmenu;
-          animation: forwards linear 0.1s animationmenu;
   cursor: pointer;
 }
 
@@ -732,12 +752,12 @@ footer .choix-footer li .fa-hands-helping {
 }
 
 .btn button {
+  border: 0;
   color: white;
   background: linear-gradient(100deg, #FF79DA, #9356DC);
   -webkit-box-shadow: 5px 5px 10px 1px #b8b8b8;
           box-shadow: 5px 5px 10px 1px #b8b8b8;
   padding: 15px;
-  border: 0;
   border-radius: 2rem;
   font-size: 18px;
   cursor: pointer;
