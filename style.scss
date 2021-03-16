@@ -584,7 +584,8 @@ footer {
     }
     
     .legende {
-        flex-grow: 1;
+        min-width: 0;
+        flex: 1;
         margin: 15px;
         white-space: nowrap;
         overflow: hidden;
@@ -614,7 +615,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 4rem;
+        width: 70px;
         background: $primary-green;
         color: $primary-white;
         margin-right: -5rem;

@@ -623,9 +623,10 @@ footer .choix-footer li .fa-hands-helping {
 }
 
 .food .legende {
+  min-width: 0;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 15px;
   white-space: nowrap;
   overflow: hidden;
@@ -667,7 +668,7 @@ footer .choix-footer li .fa-hands-helping {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 4rem;
+  width: 70px;
   background: #99E2D0;
   color: white;
   margin-right: -5rem;
