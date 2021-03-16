@@ -182,7 +182,7 @@ body {
 
 }
 
-    .btn {
+    .first-btn {
         @include btn;
     
         button {
@@ -391,10 +391,10 @@ body {
                 
                 @keyframes animatedheart {
                     0% {
-                      background-position: left;
+                      opacity: 0%;
                     }
                     100% {
-                      background-position: right;
+                      opacity: 100%;
                     }
                 }
             }
@@ -406,6 +406,7 @@ body {
 /* FOOTER */
 
 footer {
+    margin-top: -20px; margin-bottom:-20px;
     background-color: $primary-footer;
 
     .ohmyfood {
@@ -475,7 +476,8 @@ footer {
 }
 
 .heart {
-    margin-right: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
 }
 
 .blockicon-white {
@@ -506,15 +508,16 @@ footer {
 
 @keyframes animatedheart {
     0% {
-      background-position: left;
+      opacity: 0%;
     }
     100% {
-      background-position: right;
+      opacity: 100%;
     }
 }
 
 .menu {
     @include blockproperty;
+    border-radius: 20px 20px 0px 0px;
     max-width: 1280px;
     margin: auto; margin-top: -6rem;
     position: relative;
@@ -528,7 +531,6 @@ footer {
 
 .contenu {
     display: grid;
-    grid-template-columns: repeat(3, 390px);
     column-gap: 40px;
     margin-left: 20px;
 }
@@ -566,48 +568,48 @@ footer {
 
     h2 {
         font-size: 20px;
+        border-bottom: 4px solid $primary-green;
+        width: 3rem;
+        margin: 2rem 1rem 0 1rem;
+        padding-bottom: 0.4rem;
     }
 
-
-.bannieres {
-    background-color: $primary-white;
-    border-radius: 0.8rem;
-    margin: 1rem;
-    padding: 10px;
-    display: flex;
-    overflow: hidden;
-    cursor: pointer;
+    .bannieres {
+        background-color: $primary-white;
+        border-radius: 0.8rem;
+        margin: 1rem;
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+    }
     
     .legende {
         flex-grow: 1;
-
-        strong {
-            font-family: $roboto-bold;
-            margin: 0.5rem 0 0.5rem 1rem;
-            font-size: 1rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        span {
-            margin: 0 0 0.5rem 1rem;
-            font-weight: 400;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+        margin: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-
+    
+    strong {
+        font-family: $roboto-bold;
+        margin: 0.5rem 0 0.5rem 1rem;
+        font-size: $font-size-body;
+    }
+    
+    span {
+        margin: 0 0 0.5rem 1rem;
+        font-size: 15px;
+    }
+    
     .amount {
+        margin: 0 1.5rem 0.5rem 0.5rem;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
         font-family: $roboto-bold;
-        margin: 0 1.5rem 0.5rem 0.5rem;
     }
-
+    
     .rotate-div {
         display: flex;
         align-items: center;
@@ -616,71 +618,74 @@ footer {
         background: $primary-green;
         color: $primary-white;
         margin-right: -5rem;
+    }
     
-        .rotate-div:hover {
+    .fa-check-circle {
+            text-decoration: none;
+            font-size: 25px;
+            transform: rotate(180deg);
+    }
+    
+    
+    .bannieres:hover .rotate-div {
             animation: linear 0.2s validationhover;
             -webkit-animation: linear 0.2s validationhover;
             animation-fill-mode: forwards; 
             -webkit-animation-fill-mode: forwards;
-        }
-
-        @keyframes validationhover {
-            from {
-                margin-right: -5rem;
-            }
-            to {
-                margin-right: 0;
-            }
-        }
-
-        @-webkit-keyframes validationhover {
-            from {
-                margin-right: -5rem;
-            }
-            to {
-                margin-right: 0;
-            }
-        }
-
-
-            .fa-check-circle {
-                text-decoration: none;
-                font-size: 25px;
-                transform: rotate(180deg);
-                
-                .fa-check-circle:hover {
-                    animation: linear 0.1s validationhoverrotate;
-                    -webkit-animation: linear 0.1s validationhoverrotate;
-                    animation-fill-mode: forwards;
-                    -webkit-animation-fill-mode: forwards;
-                    animation-delay: 0.2s;
-                    -webkit-animation-delay: 0.2s;
-                
-                    @keyframes validationhoverrotate {
-                        from {
-                            transform: rotate(180deg);
-                        }
-                        to {
-                            transform: rotate(0deg);
-                        }
-                    }
-                    @-webkit-keyframes validationhoverrotate {
-                        from {
-                            transform: rotate(180deg);
-                        }
-                        to {
-                            transform: rotate(0deg);
-                        }
-                    }
+    }
+    
+    @keyframes validationhover {
+                from {
+                    margin-right: -5rem;
+                }
+                to {
+                    margin-right: 0;
                 }
             }
-        }
+    
+            @-webkit-keyframes validationhover {
+                from {
+                    margin-right: -5rem;
+                }
+                to {
+                    margin-right: 0;
+                }
+            }
+    
+    
+    .bannieres:hover .fa-check-circle {
+      animation: linear 0.1s validationhoverrotate;
+                -webkit-animation: linear 0.1s validationhoverrotate;
+                animation-fill-mode: forwards;
+                -webkit-animation-fill-mode: forwards;
+                animation-delay: 0.2s;
+                -webkit-animation-delay: 0.2s;
     }
+    
+    @keyframes validationhoverrotate {
+                    from {
+                        transform: rotate(180deg);
+                    }
+                    to {
+                        transform: rotate(0deg);
+                    }
+                }
+                @-webkit-keyframes validationhoverrotate {
+                    from {
+                        transform: rotate(180deg);
+                    }
+                    to {
+                        transform: rotate(0deg);
+                    }
+                }
+    
 }
 
 
-.btn {
+.second-btn {
     @include btn;
+    max-width: 1280px;
+    margin: auto;
 
     button {
         @include button;
