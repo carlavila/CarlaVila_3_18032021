@@ -58,7 +58,6 @@ body {
     height: 100%;
     background-color: $primary-white;
     position: fixed;
-    display: grid;
     place-items: center;
     z-index: 5;
     margin: auto;
@@ -242,6 +241,7 @@ body {
     
     .item {
         @include blockproperty;
+        border-radius: 10px;
         padding-left: 15px; padding-bottom: 25px; padding-top: 25px;
         box-shadow: 5px 5px 10px 1px rgb(219, 219, 219);
     }
@@ -358,10 +358,6 @@ body {
                         font-family: $roboto-thin;
                     }
                 }
-
-                .heart {
-                    margin-right: 20px;
-                }
                 
                 .blockicon-white {
                     position: absolute;
@@ -475,10 +471,12 @@ footer {
     justify-content: space-between;
 }
 
-.heart {
+.second-heart {
     padding-top: 20px;
     padding-right: 20px;
 }
+
+
 
 .blockicon-white {
     position: absolute;
@@ -762,7 +760,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-bottom: 50px; padding-left: 20px; padding-right: 20px;
+        padding-bottom: 50px; padding-right: 20px;
     }
 
     .food {
