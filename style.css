@@ -301,26 +301,6 @@ body {
 
 .restaurants .cont-item {
   width: 100%;
-  -webkit-animation: cont-item 1.5s ease-in both;
-  animation: cont-item 1.5s ease-in both;
-}
-
-@keyframes cont-item {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes cont-item {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .restaurants .cont-item a {
@@ -380,7 +360,6 @@ body {
 }
 
 .restaurants .cont-item figure figcaption .blockicon-white {
-  position: absolute;
   font-size: 35px;
   color: black;
 }
@@ -390,13 +369,11 @@ body {
 }
 
 .restaurants .cont-item figure figcaption .blockicon-color {
-  position: relative;
   background-image: -webkit-gradient(linear, right top, left top, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(to left, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-size: 200%;
   opacity: 0%;
   font-size: 35px;
 }
