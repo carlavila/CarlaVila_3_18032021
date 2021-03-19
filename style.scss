@@ -322,7 +322,8 @@ body {
             figcaption {
                 @include flex-row;
                 justify-content: space-between;
-                padding: 20px;
+                padding-left: 20px;
+                padding-right: 20px;;
                 line-height: 25px;
 
                 .description {
